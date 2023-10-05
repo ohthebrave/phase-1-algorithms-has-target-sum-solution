@@ -1,5 +1,16 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  // iterate thro each number in the array
+  for (let i = 0; i < array.length; i++) {
+// for the current num, identify a compliment that adds to the target (comp = target - num)
+      const complement = target - array[i];
+      // iterate thro the rest of the array
+      for (let j = i + 1; j < array.length; j++) {
+         // check if any number is our compliment
+  // if so return true
+          if (array[j] === complement) return true
+      }
+  }
+return false;
 }
 
 /* 
@@ -8,10 +19,18 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  hasTargetSum([22, 19, 4, 6, 30], 25)
+  iterate thro each number in the array
+  for the current num, identify a compliment that adds to the target (comp = target - num)
+  iterate thro the rest of the array
+  check if any number is our compliment
+  if so return true
 */
 
 /*
   Add written explanation of your solution here
+  make a function that checks if 2 numbers from the array add up to some target
+  [1,2,3,4] target 6
 */
 
 // You can run `node index.js` to view these console logs
